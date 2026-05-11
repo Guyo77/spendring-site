@@ -2,47 +2,165 @@
 <html>
 <head>
   <title>Atenri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
-      background: #0B0B0D;
+      margin: 0;
+      background: radial-gradient(circle at top, #171719 0%, #0B0B0D 55%, #050506 100%);
       color: #E6E6E6;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      text-align: center;
-      padding: 80px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
     }
+
+    .container {
+      max-width: 760px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 34px;
+      margin-bottom: 28px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      color: #A7E8A4;
+      background: rgba(167,232,164,0.08);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
     h1 {
       color: white;
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 52px;
+      margin: 0 0 12px;
+      letter-spacing: -1.5px;
     }
-    p {
+
+    .tagline {
+      font-size: 24px;
+      color: #F2F2F2;
+      margin: 0 0 16px;
+    }
+
+    .subtext {
+      max-width: 560px;
+      margin: 0 auto;
       font-size: 18px;
       color: #A0A0A0;
+      line-height: 1.6;
     }
+
+    .card {
+      margin: 34px auto 0;
+      padding: 24px;
+      max-width: 560px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 24px;
+      backdrop-filter: blur(18px);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      color: white;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #A0A0A0;
+      line-height: 1.5;
+    }
+
     .links {
-      margin-top: 40px;
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
     }
+
     a {
       color: #E6E6E6;
-      margin: 0 15px;
       text-decoration: none;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #444;
       padding-bottom: 4px;
     }
+
     a:hover {
-      border-color: #888;
+      border-color: #A7E8A4;
+      color: white;
+    }
+
+    .support {
+      margin-top: 28px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      .tagline {
+        font-size: 20px;
+      }
+
+      .logo {
+        width: 140px;
+        height: 140px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <main class="container">
 
-  <h1>Atenri</h1>
-  <p>Be Aware. Daily.</p>
+    <img src="/atenri-logo.png" alt="Atenri logo" class="logo">
 
-  <div class="links">
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
-  </div>
+    <div class="pill">Website in progress</div>
 
+    <h1>Atenri</h1>
+
+    <p class="tagline">A fitness tracker for your spending.</p>
+
+    <p class="subtext">
+      Atenri helps you stay aware of your daily spending with a simple ring view,
+      daily limits, spend reports, and AI-powered insights.
+    </p>
+
+    <div class="card">
+      <h2>Built for daily awareness</h2>
+      <p>
+        The full Atenri website is still being built. For now, this page provides
+        access to our privacy policy, terms, and support contact.
+      </p>
+    </div>
+
+    <div class="links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="mailto:support@atenri.app">Support</a>
+    </div>
+
+    <p class="support">
+      Support: gosborn@atenri.app
+    </p>
+
+  </main>
 </body>
 </html>
