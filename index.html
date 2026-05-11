@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: radial-gradient(circle at top, #171719 0%, #0B0B0D 55%, #050506 100%);
+      background:
+        radial-gradient(circle at top, #171719 0%, #0B0B0D 55%, #050506 100%);
       color: #E6E6E6;
       font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
       min-height: 100vh;
@@ -15,152 +20,209 @@
       align-items: center;
       justify-content: center;
       padding: 40px 20px;
+      overflow-x: hidden;
     }
 
     .container {
+      width: 100%;
       max-width: 760px;
       text-align: center;
     }
 
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 26px;
+    }
+
     .logo {
-      width: 180px;
-      height: 180px;
-      border-radius: 34px;
-      margin-bottom: 28px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+      width: 170px;
+      height: 170px;
+      border-radius: 42px;
+      object-fit: cover;
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.55),
+        0 0 120px rgba(167,232,164,0.05);
     }
 
     .pill {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(255,255,255,0.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
       border-radius: 999px;
+      border: 1px solid rgba(167,232,164,0.18);
+      background: rgba(167,232,164,0.05);
       color: #A7E8A4;
-      background: rgba(167,232,164,0.08);
       font-size: 14px;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
+      backdrop-filter: blur(12px);
     }
 
     h1 {
+      margin: 0;
       color: white;
-      font-size: 52px;
-      margin: 0 0 12px;
-      letter-spacing: -1.5px;
+      font-size: 72px;
+      font-weight: 700;
+      letter-spacing: -3px;
+      line-height: 1;
     }
 
     .tagline {
-      font-size: 24px;
-      color: #F2F2F2;
-      margin: 0 0 16px;
+      margin-top: 18px;
+      margin-bottom: 22px;
+      font-size: 30px;
+      color: #F3F3F3;
+      font-weight: 500;
+      letter-spacing: -1px;
     }
 
     .subtext {
-      max-width: 560px;
+      max-width: 720px;
       margin: 0 auto;
-      font-size: 18px;
-      color: #A0A0A0;
-      line-height: 1.6;
+      font-size: 22px;
+      color: #9B9B9F;
+      line-height: 1.65;
+      letter-spacing: -0.3px;
     }
 
     .card {
-      margin: 34px auto 0;
-      padding: 24px;
-      max-width: 560px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 24px;
+      margin: 42px auto 0;
+      padding: 32px;
+      max-width: 760px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
       backdrop-filter: blur(18px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.03),
+        0 10px 40px rgba(0,0,0,0.3);
     }
 
     .card h2 {
-      margin: 0 0 10px;
+      margin: 0 0 14px;
       color: white;
-      font-size: 22px;
+      font-size: 34px;
+      letter-spacing: -1px;
     }
 
     .card p {
       margin: 0;
-      color: #A0A0A0;
-      line-height: 1.5;
+      color: #9B9B9F;
+      line-height: 1.7;
+      font-size: 19px;
     }
 
     .links {
-      margin-top: 34px;
+      margin-top: 42px;
       display: flex;
       justify-content: center;
-      gap: 22px;
+      gap: 34px;
       flex-wrap: wrap;
     }
 
-    a {
-      color: #E6E6E6;
+    .links a {
+      color: #F2F2F2;
       text-decoration: none;
-      border-bottom: 1px solid #444;
-      padding-bottom: 4px;
+      font-size: 17px;
+      transition: all 0.2s ease;
+      opacity: 0.92;
     }
 
-    a:hover {
-      border-color: #A7E8A4;
-      color: white;
+    .links a:hover {
+      color: #A7E8A4;
+      opacity: 1;
     }
 
     .support {
-      margin-top: 28px;
-      color: #777;
-      font-size: 14px;
+      margin-top: 22px;
+      color: #6E6E73;
+      font-size: 15px;
+      letter-spacing: 0.2px;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 42px;
-      }
+    @media (max-width: 700px) {
 
-      .tagline {
-        font-size: 20px;
+      body {
+        padding: 50px 24px;
       }
 
       .logo {
         width: 140px;
         height: 140px;
+        border-radius: 34px;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      .tagline {
+        font-size: 24px;
+      }
+
+      .subtext {
+        font-size: 18px;
+      }
+
+      .card {
+        padding: 26px;
+      }
+
+      .card h2 {
+        font-size: 28px;
+      }
+
+      .card p {
+        font-size: 17px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <main class="container">
 
-    <img src="/atenri-logo.png" alt="Atenri logo" class="logo">
+    <div class="logo-wrapper">
+      <img src="/atenri-logo.png" alt="Atenri logo" class="logo">
+    </div>
 
-    <div class="pill">Website in progress</div>
+    <div class="pill">
+      Website in progress
+    </div>
 
     <h1>Atenri</h1>
 
-    <p class="tagline">A fitness tracker for your spending.</p>
+    <p class="tagline">
+      A fitness tracker for your spending.
+    </p>
 
     <p class="subtext">
-      Atenri helps you stay aware of your daily spending with a simple ring view,
+      Atenri helps you stay aware of your daily spending with a clean ring view,
       daily limits, spend reports, and AI-powered insights.
     </p>
 
     <div class="card">
       <h2>Built for daily awareness</h2>
+
       <p>
-        The full Atenri website is still being built. For now, this page provides
-        access to our privacy policy, terms, and support contact.
+        The full Atenri website is currently in development.
+        For now, this page provides access to our privacy policy,
+        terms of service, and support contact information.
       </p>
     </div>
 
     <div class="links">
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Service</a>
-      <a href="mailto:support@atenri.app">Support</a>
     </div>
 
-    <p class="support">
-      Support: gosborn@atenri.app
-    </p>
+    <div class="support">
+      support@atenri.app
+    </div>
 
   </main>
+
 </body>
 </html>
